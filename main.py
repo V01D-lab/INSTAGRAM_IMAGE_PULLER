@@ -1,4 +1,5 @@
 import requests
+import os
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 
@@ -7,11 +8,17 @@ def main(url):
 
     ##setting the driver and making it headless (making it run in the background)
 
+    main_dir = os.getcwd()
+
+    print(main_dir)
+
+    driver = main_dir + '\geckodriver.exe'
+
     firefox_options = Options()
 
     firefox_options.add_argument("--headless")
 
-    browser = webdriver.Firefox(options=firefox_options)
+    browser = webdriver.Firefox(executable_path=driver ,options=firefox_options)
 
     ##getting the url 
     
