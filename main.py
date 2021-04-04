@@ -5,7 +5,6 @@ from selenium.webdriver.firefox.options import Options
 import glob
 
 
-
 def main(url):
 
     ##setting the driver and making it headless (making it run in the background)
@@ -39,17 +38,14 @@ def main(url):
     img_count = len(glob.glob1(main_dir, "*.jpeg"))
 
     file = open(f"img{img_count}.jpeg", "wb")
-    file2 = open(f"img{img_count}.png", "wb")
 
     file.write(getting_img.content)
-    file2.write(getting_img.content)
 
     file.close()
-    file2.close()
-
 
 
 if __name__ == '__main__':
 
-    url = input('image url --> ')
-    main(url)
+    while True:
+        url = input('image url --> ')
+        main(url)
