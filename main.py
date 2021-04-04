@@ -2,6 +2,8 @@ import requests
 import os
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
+import glob
+
 
 
 def main(url):
@@ -34,9 +36,10 @@ def main(url):
 
     getting_img = requests.get(img)
 
-    
-    file = open("img.jpeg", "wb")
-    file2 = open("img.png", "wb")
+    img_count = len(glob.glob1(main_dir, "*.jpeg"))
+
+    file = open(f"img{img_count}.jpeg", "wb")
+    file2 = open(f"img{img_count}.png", "wb")
 
     file.write(getting_img.content)
     file2.write(getting_img.content)
